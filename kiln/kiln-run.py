@@ -1,9 +1,8 @@
-import logging
 import time
 from uuid import uuid1
 import datetime
-
-__author__ = 'samkeen'
+import click
+from kiln.util import log
 
 execution_start_time = time.time()
 execution_uuid = uuid1()
@@ -24,4 +23,21 @@ executionMetrics = {
     'processing_duration': ''
 }
 
-print(executionMetrics)
+
+@click.command()
+@click.option('--configPath', default=None,
+              help='optional override path to the config file')
+@click.option('--verbose', is_flag=True,
+              help='Verbose mode flag')
+def main(configpath, verbose):
+    """The kiln script"""
+    if verbose:
+        click.echo('verbose mode')
+
+    logger = log.setup_custom_logger('root', filename='kiln.log')
+    logger.debug('Kiln run started')
+
+    logger.info('Kiln run finished')
+
+if __name__ == '__main__':
+    main()
