@@ -33,6 +33,8 @@ def main(configpath, verbose):
     """The kiln script"""
     if verbose:
         click.echo('verbose mode')
+    if configpath:
+        click.echo('Config Path: ' + configpath)
 
     logger = log.setup_custom_logger('root', filename='kiln.log')
     logger.debug('Kiln run started')
