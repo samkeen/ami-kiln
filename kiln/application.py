@@ -2,7 +2,17 @@ import time
 from uuid import uuid1
 import datetime
 import click
+import sys
+
+from kiln.AppConfig import AppConfig
+from kiln.errors.Errors import AppConfigError
 from kiln.util import log
+from os import path
+from os import pardir
+
+here = path.abspath(path.dirname(__file__))
+topDir = path.abspath(path.join(here, pardir))
+defaultConfigPath = path.join(topDir, 'config')
 
 execution_start_time = time.time()
 execution_uuid = uuid1()
@@ -35,7 +45,20 @@ def main(configpath, verbose):
         click.echo('verbose mode')
     if configpath:
         click.echo('Config Path: ' + configpath)
+    else:
+        click.echo('Using default config path at: ' + defaultConfigPath)
+        configpath = defaultConfigPath
 
+    try:
+        appConfigPath = path.join(configpath, 'config.yml')
+        appConfig = AppConfig(appConfigPath)
+        click.echo('Found and loaded app config')
+
+    except AppConfigError as e:
+        click.echo("Received {} error with message: '{}', shutting down".format(type(e), e.message))
+        sys.exit(1)
+
+    click.echo("Loaded App Config: {}".format(appConfig.app_config))
     logger = log.setup_custom_logger('root', filename='kiln.log')
     logger.debug('Kiln run started')
 

@@ -12,6 +12,7 @@ setup(
     install_requires=[
         'Click',
         'pytz',
+        'PyYAML'
     ],
     entry_points={
         'console_scripts': [
