@@ -1,7 +1,7 @@
 import os
 import yaml
 
-from kiln.errors.Errors import AppConfigError
+from amiorganizer.errors.Errors import AppConfigError
 
 
 class AppConfig:

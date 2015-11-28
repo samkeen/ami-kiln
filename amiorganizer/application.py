@@ -4,9 +4,9 @@ import datetime
 import click
 import sys
 
-from kiln.AppConfig import AppConfig
-from kiln.errors.Errors import AppConfigError
-from kiln.util import log
+from amiorganizer.AppConfig import AppConfig
+from amiorganizer.errors.Errors import AppConfigError
+from amiorganizer.util import log
 from os import path
 from os import pardir
 
@@ -40,7 +40,7 @@ executionMetrics = {
 @click.option('--verbose', is_flag=True,
               help='Verbose mode flag')
 def main(configpath, verbose):
-    """The kiln script"""
+    """The amiorganizer script"""
     if verbose:
         click.echo('verbose mode')
     if configpath:
@@ -59,10 +59,10 @@ def main(configpath, verbose):
         sys.exit(1)
 
     click.echo("Loaded App Config: {}".format(appConfig.app_config))
-    logger = log.setup_custom_logger('root', filename='kiln.log')
-    logger.debug('Kiln run started')
+    logger = log.setup_custom_logger('root', filename='amiorganizer.log')
+    logger.debug('Ami-Organizer run started')
 
-    logger.info('Kiln run finished')
+    logger.info('Ami-Organizer run finished')
 
 if __name__ == '__main__':
     main()

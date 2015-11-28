@@ -3,3 +3,5 @@
 __pycache__/
 kiln.log
 /config/config.yml
+/dist/
+/build/
