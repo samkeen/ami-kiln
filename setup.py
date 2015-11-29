@@ -10,8 +10,8 @@ setup(
     author='Sam Keen',
     author_email='sam.sjk@gmail.com',
     url='https://github.com/samkeen/ami-organizer',
-    download_url='https://github.com/samkeen/ami-organizer/archive/v0.1.0.tar.gz',
-    version='v0.1.0',
+    download_url='https://github.com/samkeen/ami-organizer/archive/v0.1.1.tar.gz',
+    version='v0.1.1',
     description='An AMI creator and cataloging system',
     keywords=['ami', 'aws', 'ec2'],
     classifiers=[
@@ -29,10 +29,9 @@ setup(
         'License :: OSI Approved :: MIT License',
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),

@@ -1,6 +1,8 @@
 /.idea/
+.tox
 /*.egg-info/
 __pycache__/
+*.pyc
 *.log
 /config/config.yml
 /dist/
