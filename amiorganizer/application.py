@@ -4,7 +4,7 @@ import datetime
 import click
 import sys
 
-from amiorganizer.AppConfig import AppConfig
+from amiorganizer.app_config import AppConfig
 from amiorganizer.errors.Errors import AppConfigError
 from amiorganizer.util import log
 from os import path

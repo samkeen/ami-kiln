@@ -1,7 +1,7 @@
 /.idea/
 /*.egg-info/
 __pycache__/
-kiln.log
+*.log
 /config/config.yml
 /dist/
 /build/
